@@ -5,14 +5,7 @@ const port = 4444;
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
-app.post('/pokemon5g/Pokemon', jsonParser, (req, res) => {
-    const body = req.body;
-    console.log('Got body:', body);
-    //on code ensuite l'insertion dans mongoDB, lisez la doc hehe !!
-    res.json(body);
-});
 
-app.use(bodyParser.urlencoded({ extended: true }));
 
 dbo.connectToServer();
 app.get("/", function (req, res) {
@@ -22,6 +15,7 @@ app.get("/", function (req, res) {
 app.listen(port, function () {
     console.log(`App listening on port ${port}!`);
 });
+
 app.get("/pokemon5g/Pokemon", function (req, res) {
     //on se connecte à la DB MongoDB
     const dbConnect = dbo.getDb();
@@ -37,9 +31,12 @@ app.get("/pokemon5g/Pokemon", function (req, res) {
                 res.json(result);
             }
         });
-    /*
-    Bref lisez la doc, 
-    il y a plein de manières de faire ce qu'on veut :) 
-    */
-
+});
+app.use(bodyParser.urlencoded({ extended: true }));
+app.post('/pokemon5g/Pokemon', jsonParser, (req, res) => {
+    const dbConnect = dbo.getDb();
+    dbConnect
+    const body = req.body;
+    console.log('Got body:', body);
+    res.json(body);
 });

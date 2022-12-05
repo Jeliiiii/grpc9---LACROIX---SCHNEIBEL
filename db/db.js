@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb");
 const connectionString =
-  "mongodb+srv://user:password@cluster0.ff7shgn.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://Into:ViruOqHp9okOZy4B@cluster0.zjsb2o8.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -16,7 +16,7 @@ module.exports = {
       }
       
       //remplacer whatever par le nom de votre DB !
-      dbConnection = db.db("whatever");
+      dbConnection = db.db("pokemon5g");
       console.log("Successfully connected to MongoDB.");
     });
   },

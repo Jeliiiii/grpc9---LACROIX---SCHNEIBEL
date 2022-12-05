@@ -19,5 +19,6 @@
   "homepage": "https://github.com/Jeliiiii/grpc9-Projet-6#readme",
   "dependencies": {
     "express": "^4.18.2"
-  }
+  },
+  "devDependencies": {}
 }

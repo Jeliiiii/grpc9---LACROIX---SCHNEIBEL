@@ -13,7 +13,7 @@ app.get("/", function (req, res) {
 });
 
 app.listen(port, function () {
-    console.log(`App listening on port ${port}!`);
+    console.log(`Vous êtes sur le port: ${port}!`);
 });
 
 app.get("/pokemon5g/Pokemon", function (req, res) {
@@ -32,8 +32,17 @@ app.get("/pokemon5g/Pokemon", function (req, res) {
             }
         });
 });
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/pokemon5g/Pokemon', jsonParser, (req, res) => {
+    const dbConnect = dbo.getDb();
+    dbConnect
+    const body = req.body;
+    console.log('Got body:', body);
+    res.json(body);
+});
+
+app.delete('/pokemon5g/Pokemon', jsonParser, (req, res) => {
     const dbConnect = dbo.getDb();
     dbConnect
     const body = req.body;

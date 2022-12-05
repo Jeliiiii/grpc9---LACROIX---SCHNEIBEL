@@ -17,7 +17,7 @@ module.exports = {
       
       //remplacer whatever par le nom de votre DB !
       dbConnection = db.db("pokemon5g");
-      console.log("Successfully connected to MongoDB.");
+      console.log("Vous êtes bien connecté à MongoDB.");
     });
   },
 

@@ -145,14 +145,6 @@ app.post('/pokedex/post', jsonParser, (req, res) => {
     });
 });
 
-app.post('/pokedex/update', jsonParser, (req, res) => {
-    const dbConnect = dbo.getDb();
-    const body = req.body;
-    console.log('Got body:', body);
-    dbConnect.collection("Pokedex").updateOne({num:body.num}, {$set:{num:body.newnum , name:body.newname , type:body.newtype}})
-    res.json(body);
-});
-
 app.delete('/pokedex/delete', jsonParser, (req, res) => {
     const dbConnect = dbo.getDb();
     const body = req.body;

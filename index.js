@@ -51,7 +51,7 @@ app.post('/pokemon/update', jsonParser, (req, res) => {
     const dbConnect = dbo.getDb();
     const body = req.body;
     console.log('Got body:', body);
-    dbConnect.collection("Pokemon").updateOne({num:body.num}, {$set:{num:body.newnum , name:body.newname , type:body.newtype}})
+    dbConnect.collection("Pokemon").updateOne({num:body.num}, {$set:{name:body.newname , type:body.newtype}})
     res.json(body);
 });
 

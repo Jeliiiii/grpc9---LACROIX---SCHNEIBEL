@@ -18,6 +18,7 @@ app.listen(port, function () {
     console.log(`Vous êtes sur le port: ${port}!`);
 });
 
+//pour voir tous les pokemons disponibles dans la bdd
 app.get("/pokemon/get", function (req, res) {
     const dbConnect = dbo.getDb();
     dbConnect
@@ -32,6 +33,7 @@ app.get("/pokemon/get", function (req, res) {
         });
 });
 
+//pour ajouter un pokemon dans la bdd
 app.post('/pokemon/post', jsonParser, (req, res) => {
     const dbConnect = dbo.getDb();
     const body = req.body;
@@ -44,6 +46,7 @@ app.post('/pokemon/post', jsonParser, (req, res) => {
     });
 });
 
+//pour modifier un pokemon dans la bdd
 app.post('/pokemon/update', jsonParser, (req, res) => {
     const dbConnect = dbo.getDb();
     const body = req.body;
@@ -52,6 +55,7 @@ app.post('/pokemon/update', jsonParser, (req, res) => {
     res.json(body);
 });
 
+//pour supprimer un pokemon dans la bdd
 app.delete('/pokemon/delete', jsonParser, (req, res) => {
     const dbConnect = dbo.getDb();
     const body = req.body;
@@ -64,10 +68,7 @@ app.delete('/pokemon/delete', jsonParser, (req, res) => {
     });
 });
 
-
-
-
-
+//pour voir tous les types disponibles dans la bdd
 app.get("/type/get", function (req, res) {
     const dbConnect = dbo.getDb();
     dbConnect
@@ -82,6 +83,7 @@ app.get("/type/get", function (req, res) {
         });
 });
 
+//pour ajouter un type dans la bdd
 app.post('/type/post', jsonParser, (req, res) => {
     const dbConnect = dbo.getDb();
     const body = req.body;
@@ -94,6 +96,7 @@ app.post('/type/post', jsonParser, (req, res) => {
     });
 });
 
+//pour modifier un type dans la bdd
 app.post('/type/update', jsonParser, (req, res) => {
     const dbConnect = dbo.getDb();
     const body = req.body;
@@ -102,6 +105,7 @@ app.post('/type/update', jsonParser, (req, res) => {
     res.json(body);
 });
 
+//pour supprimer un type dans la bdd
 app.delete('/type/delete', jsonParser, (req, res) => {
     const dbConnect = dbo.getDb();
     const body = req.body;
@@ -114,10 +118,7 @@ app.delete('/type/delete', jsonParser, (req, res) => {
     });
 });
 
-
-
-
-
+//pour voir tous les pokemons qu'on a attrapés dans la bdd
 app.get("/pokedex/get", function (req, res) {
     const dbConnect = dbo.getDb();
     dbConnect
@@ -132,7 +133,7 @@ app.get("/pokedex/get", function (req, res) {
         });
 });
 
-
+//pour ajouter un pokemon qu'on a attrapé dans la bdd
 app.post('/pokedex/post', jsonParser, (req, res) => {
     const dbConnect = dbo.getDb();
     const body = req.body;
@@ -145,6 +146,7 @@ app.post('/pokedex/post', jsonParser, (req, res) => {
     });
 });
 
+//pour supprimer un pokemon qu'on a attrapé dans la bdd (relâcher)
 app.delete('/pokedex/delete', jsonParser, (req, res) => {
     const dbConnect = dbo.getDb();
     const body = req.body;
